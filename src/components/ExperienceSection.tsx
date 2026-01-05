@@ -14,59 +14,72 @@ interface Experience {
   details: string[];
   techStack: string[];
   impact?: string;
+  link?: string;
 }
 
 const experiences: Experience[] = [
   {
     id: "1",
-    company: "Design Studio",
-    logo: "https://images.unsplash.com/photo-1618354691229-88d47f285158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZXNpZ24lMjBzdHVkaW8lMjBsb2dvfGVufDF8fHx8MTc2NjY0MDM4MXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    role: "Product Designer & Engineer",
-    date: "Jun 2024 - Present",
+    company: "Neural Engineering and Computation Lab",
+    logo: "/logos/unitreego2.avif",
+    role: "Deep Learning Undergraduate Researcher",
+    date: "Oct 2025 - Present",
     shortDescription:
-      "Leading design systems and building component libraries for modern web applications",
+      "Training a Unitree Go2 quadruped using NVIDIA Isaac Sim",
     details: [
-      "Architected and implemented a comprehensive design system used across 5+ products",
-      "Built reusable React components with TypeScript and Tailwind CSS",
-      "Collaborated with cross-functional teams to define product requirements",
-      "Conducted user research and usability testing to inform design decisions",
+      "Using Isaac Sim and ROS 2 to teleoperate a unitree Go2 quadruped equipped with a robotic arm",
+      "Utilizing Isaac Lab to train the Go2 Robot to perform basic maneuvers with reinforcement learning",
     ],
-    techStack: ["React", "TypeScript", "Tailwind", "Figma", "Framer Motion"],
-    impact: "40% reduction in development time for new features",
+    techStack: ["Isaac Sim", "ROS2", "PyTorch"],
   },
   {
     id: "2",
-    company: "Tech Startup",
-    logo: "https://images.unsplash.com/photo-1692372374563-9ab54f303b7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0ZWNoJTIwc3RhcnR1cCUyMGxvZ298ZW58MXx8fHwxNzY2NjQwMzgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    role: "Frontend Developer Intern",
-    date: "Jun 2023 - Aug 2023",
+    company: "Paramount Pictures",
+    logo: "/logos/paramount.jpeg",
+    role: "Software Engineering Intern",
+    date: "Jun 2025 - Nov 2025",
     shortDescription:
-      "Developed interactive web experiences with focus on performance and accessibility",
+      "Developed PlutoTV experiences with focus on performance and accessibility",
     details: [
-      "Built responsive web interfaces using React and modern CSS techniques",
-      "Optimized application performance, improving load time by 60%",
-      "Implemented accessibility features following WCAG 2.1 guidelines",
-      "Participated in code reviews and contributed to engineering best practices",
+      "Built generalized data-fetching utility powering both Paramount+ and PlutoTV APIs, enabling shared application logic across distributed micro-services",
+      "Developed accessibility and internationalization features (TTS, translation, etc.), expanding customer base to Brazil and various European Countries",
+      "Implemented maturity-rated content filetering methods for Kids Mode",
+      "Utilized Svelte 4 development practices to optimize for PlutoTV legacy CTV devices with a 75 MB runtime constraint",
     ],
-    techStack: ["React", "JavaScript", "CSS", "Git"],
-    impact: "Shipped features used by 10k+ monthly active users",
+    techStack: ["Svelte", "TypeScript", "Git"],
+    impact: "Scaled PlutoTV apps to 20 countries with < 300 ms render latency",
   },
   {
     id: "3",
-    company: "Research Lab",
-    logo: "https://images.unsplash.com/photo-1700314040142-3389dd76fd20?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNlYXJjaCUyMGxhYiUyMGxvZ298ZW58MXx8fHwxNzY2NjQwMzgxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    company: "Nova, Tech for Good",
+    logo: "/logos/nova.svg",
+    role: "Software Engineering Lead",
+    date: "Jan 2023 - May 2024",
+    shortDescription: "Developing software solutions for non-profits",
+    details: [
+      "Leading code reviews, sprint planning, and iterative development cycles across 8-member engineering + design teams building nonprofit software.",
+      "Building a external P2P fundraising platform for Drop in the Bucket, integrated with Stripe Checkout and PayPal API. Automated campaign moderation and recurring-donation tracking to cut admin workload by 70%.",
+      "Engineered a multi-tenant data management platform for Inner City Visions to track services provided to homeless populations, digitizing records for 1,000+ individuals with live transcription and e-signature workflows",
+    ],
+    techStack: ["React", "Firebase", "TypeScript"],
+    link: "https://github.com/novaforgood/ICV",
+  },
+  {
+    id: "4",
+    company: "Center For Heterogenous Performance and Integration Scaling",
+    logo: "/logos/chips.png",
     role: "Undergraduate Researcher",
     date: "Jan 2023 - May 2024",
     shortDescription:
-      "Researching human-computer interaction and designing novel interaction techniques",
+      "Created and sped up computer vision pipeline for MicroLED Displays and Computer Chip Component Analysis",
     details: [
-      "Conducted literature reviews on gesture-based interfaces",
-      "Designed and prototyped experimental interaction systems",
-      "Analyzed user study data using statistical methods",
-      "Co-authored research paper submitted to CHI conference",
+      "Wrote OpenCV algorithms to achieve a 90.95% increase in micron-level accuracy and a 27% increase in algorithm performance using novel approaches (NumPy, scipy, Pandas) to mitigate image distortions, calculate die shifts, and refine template matching and edge detection techniques.",
+      "Automated microLED contact-pairing in Python using OpenCV and gdspy to eliminate flexpath overlaps and streamline GDSII routing workflows, overwriting 57% more microLED contact defects",
+      "Developed A* algorithms with gdspy to calculate optimal 3D wire routing between semiconductor dies, minimizing wiring complexity and reducing signal interference in integrated circuit design.",
     ],
-    techStack: ["Python", "Unity", "C#", "R"],
+    techStack: ["Python", "OpenCV", "KLayout", "GDSPY"],
     impact: "Presented research at university symposium",
+    link: "https://github.com/TravisHaa/CHIPS_research"
   },
 ];
 
@@ -116,6 +129,29 @@ export function ExperienceSection() {
                   <div className="mb-2">{exp.company}</div>
                   <div className="text-sm text-black/60 mb-1">{exp.role}</div>
                   <div className="text-xs text-black/40">{exp.date}</div>
+                  {exp.link && (
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // Prevent card expansion when clicking link
+                      className="text-sm cursor-pointer mt-1 block"
+                      style={{
+                        color: "#2563eb", // blue-600
+                        textDecoration: "none",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = "#1d4ed8"; // blue-700
+                        e.currentTarget.style.textDecoration = "underline";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = "#2563eb"; // blue-600
+                        e.currentTarget.style.textDecoration = "none";
+                      }}
+                    >
+                      {exp.link}
+                    </a>
+                  )}
                 </div>
                 <motion.div
                   animate={{ rotate: expandedId === exp.id ? 180 : 0 }}

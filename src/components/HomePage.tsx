@@ -49,7 +49,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
           <FocusInView delay={0.16}>
             <p className="text-lg text-black/60 max-w-xl mx-auto mb-12">
-              C++ Optimization | AI glasses | Deep Learning
+              C++ Optimization | AI Wearables | Deep Learning
             </p>
           </FocusInView>
         </div>
@@ -106,7 +106,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
         style={{ y: experienceY }}
       >
         <FocusInView>
-          <h2 className=" text-black/90">Experience</h2>
+          <h2
+            className="pt-20 pb-0 text-black/90"
+            style={{ marginBottom: "2rem" }}
+          >
+            Experience
+          </h2>
         </FocusInView>
         <ExperienceSection />
       </motion.section>
@@ -117,7 +122,9 @@ export function HomePage({ onNavigate }: HomePageProps) {
         style={{ y: courseworkY }}
       >
         <FocusInView>
-          <h2 className="text-xl text-black/90">Coursework</h2>
+          <h2 className="pt-20 pb-0 text-black/90"
+            style={{ marginBottom: "2rem" }}
+          >Coursework</h2>
         </FocusInView>
         <CourseworkSection />
       </motion.section>

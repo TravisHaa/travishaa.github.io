@@ -7,21 +7,21 @@ interface CourseCategory {
 
 const coursework: CourseCategory[] = [
   {
-    category: 'Systems',
+    category: 'General Computer Science',
     courses: [
-      'Computer Architecture',
-      'Operating Systems',
-      'Distributed Systems',
-      'Computer Networks'
+      'CS32: Object Oriented Programming',
+      'CS33: Introduction to Computer Organization',
+      'CS35L: Software Construction',
+      'CSM51A: Logic Design and Digital Systems',
+      'ECE3: Introduction to Electrical Engineering'
     ]
   },
   {
     category: 'ML / AI',
     courses: [
-      'Machine Learning',
-      'Deep Learning',
+      'ECE147: Deep Learning',
+      'ECE239AS: Deep Learning II',
       'Computer Vision',
-      'Natural Language Processing'
     ]
   },
   {
@@ -36,10 +36,10 @@ const coursework: CourseCategory[] = [
   {
     category: 'Theory',
     courses: [
-      'Algorithms',
-      'Data Structures',
-      'Theory of Computation',
-      'Discrete Mathematics'
+      'CS131: Programming Languages',
+      'CS180: Algorithms and Data Structures',
+      'CS181: Theory of Computing',
+      'Math 61: Discrete Mathematics'
     ]
   }
 ];
