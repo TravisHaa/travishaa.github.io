@@ -23,7 +23,7 @@ const projectData: { [key: string]: ProjectData } = {
     subtitle: "Apple VisionOS Hand gesture-controlled music controller",
     heroImage: "/logos/amuse.png",
     description:
-      "Amuse is an innovative music controller application built for Apple VisionOS that leverages hand gesture recognition to provide an immersive, touch-free music control experience. Users can control playback and navigate playlists using intuitive hand movements in 3D space.",
+      "Amuse is a music controller application built for Apple VisionOS that leverages hand gesture recognition to provide an immersive, touch-free music control experience. Users can control playback and navigate playlists using intuitive hand movements in 3D space.",
     techStack: [
       "Swift",
       "SwiftUI",
@@ -35,7 +35,7 @@ const projectData: { [key: string]: ProjectData } = {
     problem:
       "Traditional music controllers require physical interaction with screens or devices, which can be inconvenient in mixed reality environments. Users need a more natural and immersive way to control music while wearing spatial computing headsets. (I'm also just too lazy to reach for my phone when I want to turn the volume down)",
     solution:
-      "Developed a VisionOS application that uses hand tracking and gesture recognition to map natural hand movements to music control functions. Implemented smooth gesture detection for play/pause, volume control, and track navigation. Created an intuitive 3D interface that responds to hand proximity and gestures.",
+      "Developed a VisionOS application that uses GestureKit to map natural hand movements to music control functions. Implemented smooth gesture detection for play/pause, track navigation, and opening the album panel. Created an intuitive 3D interface that responds to hand proximity and gestures. As much as I'd love to launch this app, I'm unable to do so as App Review requires manual testing, and I don't have a Vision Pro (Yes, a Redditor demo'd it for me). ",
 
     githubUrl: "https://github.com/TravisHaa/amuse-visionos",
   },
@@ -75,7 +75,7 @@ const projectData: { [key: string]: ProjectData } = {
     id: "4",
     title: "Computer Science Course Planner",
     subtitle: "Course Planner for UCLA CS/CSE Students",
-    heroImage: "/logos/",
+    heroImage: "/logos/planner.png",
     description:
       "A web application designed specifically for UCLA Computer Science and Computer Science & Engineering students to plan their academic course schedules. The tool helps students visualize prerequisites, track degree progress, and optimize their course selections.",
     techStack: ["React", "TypeScript", "PostgreSQL", "Tailwind CSS"],

@@ -43,7 +43,7 @@ const projects: Project[] = [
     title: "Computer Science Course Planner",
     subtitle: "Course Planner for UCLA CS/CSE Students",
     date: "2024",
-    imageUrl: "/logos/",
+    imageUrl: "/logos/planner.png",
     githubUrl: "https://github.com/AudreyW05/Four-Year-Plan-Frontend",
   },
   {
@@ -140,7 +140,7 @@ export function ProjectsPage({ onProjectClick }: ProjectsPageProps) {
                         className="flex items-center gap-1.5 text-blue-500 hover:text-blue-600 transition-colors px-2 py-1 rounded-md hover:bg-blue-50"
                       >
                         <Github className="w-5 h-5" />
-                        <span className="text-sm font-medium">github</span>
+                        <span className="text-xs font-medium">Github</span>
                       </a>
                     )}
                   </div>

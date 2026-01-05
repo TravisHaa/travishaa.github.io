@@ -66,7 +66,7 @@ const experiences: Experience[] = [
   },
   {
     id: "4",
-    company: "Center For Heterogenous Performance and Integration Scaling",
+    company: "Center For Heterogenous Integration and Performance Scaling",
     logo: "/logos/chips.png",
     role: "Undergraduate Researcher",
     date: "Jan 2023 - May 2024",
