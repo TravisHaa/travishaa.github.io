@@ -1,21 +1,19 @@
-import React from "react";
-import { MeshGradient } from "./MeshGradient";
+import { motion, useScroll, useTransform } from "motion/react";
 import { FocusInView } from "./FocusInView";
-import { motion, useTransform, useScroll } from "motion/react";
-import { Code, Palette, Sparkles, Mail, Linkedin, Github } from "lucide-react";
+import { MeshGradient } from "./MeshGradient";
+import { Code2, Palette, Sparkles, Github, Linkedin, Mail } from "lucide-react";
 
 export function AboutPage() {
   const { scrollY } = useScroll();
 
-  // Transform values for parallax effect
+  // Parallax transforms
   const heroY = useTransform(scrollY, [0, 500], [0, -100]);
   const heroOpacity = useTransform(scrollY, [0, 300], [1, 0]);
   const contentY = useTransform(scrollY, [200, 800], [80, -50]);
 
-  // Skills/Interests data
   const skills = [
     {
-      icon: Code,
+      icon: Code2,
       title: "Engineering",
       description:
         "Building robust, scalable applications with modern web technologies",
@@ -39,77 +37,55 @@ export function AboutPage() {
 
   return (
     <div className="w-full">
-      {/* Hero Section with Profile Picture */}
+      {/* Hero Section with Mesh Gradient */}
       <motion.section
         className="relative min-h-[60vh] flex items-center justify-center overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity }}
       >
         <MeshGradient />
 
-        <div className="relative z-10 text-center px-6 max-w-3xl mx-auto pt-24">
-          {/* Profile Picture */}
-          <FocusInView>
-            <div className="mb-8 flex justify-center">
-              <motion.div
-                className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden"
-                style={{
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
-                }}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.2,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-              >
-                <img
-                  src="/profile-picture.jpg"
-                  alt="Travis"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    // Fallback to a placeholder if image doesn't exist
-                    (e.target as HTMLImageElement).src =
-                      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces";
-                  }}
-                />
-              </motion.div>
+        {/*profile pic*/}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-6 pt-24">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+            {/* Text Content - Left Side */}
+            <div className="flex-1 text-center md:text-left">
+              <FocusInView>
+                <div className="mb-4">
+                  <div className="text-xs uppercase tracking-wider text-black/50 mb-2">
+                    About Me
+                  </div>
+                </div>
+              </FocusInView>
+
+              <FocusInView delay={0.08}>
+                <h1 className="mb-6 text-black/90 text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
+                  Building the future, one pixel at a time
+                </h1>
+              </FocusInView>
+
+              <FocusInView delay={0.16}>
+                <p className="text-lg text-black/60 max-w-2xl mx-auto md:mx-0">
+                  I'm a designer and engineer passionate about creating
+                  beautiful, functional experiences that delight users and solve
+                  real problems.
+                </p>
+              </FocusInView>
             </div>
-          </FocusInView>
-
-          <FocusInView>
-            <div className="mb-4">
-              <div className="text-xs uppercase tracking-wider text-black/50 mb-2">
-                About Me
-              </div>
-            </div>
-          </FocusInView>
-
-          <FocusInView delay={0.08}>
-            <h1 className="mb-6 text-black/90 text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-              Building the future, one pixel at a time
-            </h1>
-          </FocusInView>
-
-          <FocusInView delay={0.16}>
-            <p className="text-lg text-black/60 max-w-2xl mx-auto">
-              I'm a designer and engineer passionate about creating beautiful,
-              functional experiences that delight users and solve real problems.
-            </p>
-          </FocusInView>
+          </div>
         </div>
       </motion.section>
 
-      {/* Content Sections */}
+      {/* Main Content */}
       <motion.div
         className="max-w-4xl mx-auto px-6 py-16"
         style={{ y: contentY }}
       >
-        {/* My Story Section */}
+        {/* Bio Section */}
         <section className="mb-24">
           <FocusInView>
             <h2 className="mb-8 text-black/90">My Story</h2>
           </FocusInView>
+
           <FocusInView delay={0.05}>
             <div className="space-y-6 text-black/70 leading-relaxed">
               <p>
@@ -135,11 +111,12 @@ export function AboutPage() {
           </FocusInView>
         </section>
 
-        {/* What I Do Section */}
+        {/* Skills Grid */}
         <section className="mb-24">
           <FocusInView>
             <h2 className="mb-12 text-black/90">What I Do</h2>
           </FocusInView>
+
           <div className="grid md:grid-cols-3 gap-6">
             {skills.map((skill, index) => (
               <FocusInView key={skill.title} delay={index * 0.1}>
@@ -156,15 +133,19 @@ export function AboutPage() {
                   <div className="mb-4">
                     <div
                       className="inline-flex p-3 rounded-2xl transition-all duration-500 group-hover:scale-110"
-                      style={{ background: "rgba(0,0,0,0.05)" }}
+                      style={{
+                        background: "rgba(0,0,0,0.05)",
+                      }}
                     >
                       <skill.icon className="w-6 h-6 text-black/70" />
                     </div>
                   </div>
+
                   <h3 className="mb-3 text-black/90">{skill.title}</h3>
                   <p className="text-sm text-black/60 mb-4 leading-relaxed">
                     {skill.description}
                   </p>
+
                   <div className="flex flex-wrap gap-2">
                     {skill.technologies.map((tech) => (
                       <span
@@ -185,11 +166,12 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* My Approach Section */}
+        {/* Values Section */}
         <section className="mb-24">
           <FocusInView>
             <h2 className="mb-12 text-black/90">My Approach</h2>
           </FocusInView>
+
           <div className="grid md:grid-cols-2 gap-8">
             <FocusInView delay={0.05}>
               <div className="space-y-3">
@@ -201,6 +183,7 @@ export function AboutPage() {
                 </p>
               </div>
             </FocusInView>
+
             <FocusInView delay={0.1}>
               <div className="space-y-3">
                 <h3 className="text-black/90">Attention to Detail</h3>
@@ -210,6 +193,7 @@ export function AboutPage() {
                 </p>
               </div>
             </FocusInView>
+
             <FocusInView delay={0.15}>
               <div className="space-y-3">
                 <h3 className="text-black/90">Continuous Learning</h3>
@@ -219,6 +203,7 @@ export function AboutPage() {
                 </p>
               </div>
             </FocusInView>
+
             <FocusInView delay={0.2}>
               <div className="space-y-3">
                 <h3 className="text-black/90">Collaboration</h3>
@@ -231,7 +216,7 @@ export function AboutPage() {
           </div>
         </section>
 
-        {/* Let's Connect Section */}
+        {/* Connect Section */}
         <section className="pb-16">
           <FocusInView>
             <div
@@ -249,6 +234,7 @@ export function AboutPage() {
                 I'm always open to new opportunities and collaborations. Feel
                 free to reach out!
               </p>
+
               <div className="flex justify-center gap-4 flex-wrap">
                 <a
                   href="mailto:hello@example.com"
@@ -262,6 +248,7 @@ export function AboutPage() {
                   <Mail className="w-4 h-4" />
                   Email
                 </a>
+
                 <a
                   href="https://linkedin.com"
                   target="_blank"
@@ -277,6 +264,7 @@ export function AboutPage() {
                   <Linkedin className="w-4 h-4" />
                   LinkedIn
                 </a>
+
                 <a
                   href="https://github.com"
                   target="_blank"

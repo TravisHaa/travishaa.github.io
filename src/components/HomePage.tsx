@@ -1,23 +1,23 @@
-import { MeshGradient } from './MeshGradient';
-import { FocusInView } from './FocusInView';
-import { ExperienceSection } from './ExperienceSection';
-import { CourseworkSection } from './CourseworkSection';
-import { ChevronDown } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { motion, useTransform, useScroll } from 'motion/react';
+import { MeshGradient } from "./MeshGradient";
+import { FocusInView } from "./FocusInView";
+import { ExperienceSection } from "./ExperienceSection";
+import { CourseworkSection } from "./CourseworkSection";
+import { ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, useTransform, useScroll } from "motion/react";
 
 interface HomePageProps {
-  onNavigate: (page: 'projects') => void;
+  onNavigate: (page: "projects") => void;
 }
 
 export function HomePage({ onNavigate }: HomePageProps) {
   const { scrollY } = useScroll();
-  
+
   // Transform values for parallax effect
   const heroY = useTransform(scrollY, [0, 800], [0, -150]);
   const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
   const heroScale = useTransform(scrollY, [0, 400], [1, 0.95]);
-  
+
   const experienceY = useTransform(scrollY, [400, 1200], [100, -50]);
   const courseworkY = useTransform(scrollY, [1000, 1600], [100, -50]);
   const ctaY = useTransform(scrollY, [1200, 2000], [100, 0]);
@@ -25,31 +25,31 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="w-full">
       {/* Hero Section */}
-      <motion.section 
+      <motion.section
         className="relative h-screen flex items-center justify-center overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity, scale: heroScale }}
       >
         <MeshGradient />
-        
+
         <div className="relative z-10 text-center px-6">
           <FocusInView>
             <div className="mb-4">
               <div className="text-xs uppercase tracking-wider text-black/50 mb-2">
-                Designer & Engineer
+                Software Engineer
               </div>
-              <div className="text-sm text-black/60">CS @ UCSD</div>
+              <div className="text-sm text-black/60">CSE @ UCLA</div>
             </div>
           </FocusInView>
 
           <FocusInView delay={0.08}>
             <h1 className="mb-6 text-black/90 text-6xl md:text-7xl font-bold tracking-tight leading-[1.1]">
-              I'm <span className="text-black">Travis</span>.
+              Hey! I'm <span className="text-black">Travis</span>.
             </h1>
           </FocusInView>
 
           <FocusInView delay={0.16}>
             <p className="text-lg text-black/60 max-w-xl mx-auto mb-12">
-              Building delightful experiences at the intersection of design and engineering
+              C++ Optimization | AI glasses | Deep Learning
             </p>
           </FocusInView>
         </div>
@@ -69,17 +69,35 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <ChevronDown className="w-5 h-5 text-black/40 animate-bounce" />
         </motion.div>
 
-        {/* Timestamp (bottom left) */}
-        <div className="absolute bottom-8 left-8 text-xs text-black/40">
+        {/* Timestamp (bottom left) - pops in after name */}
+        <motion.div
+          className="absolute bottom-8 left-8 text-xs text-black"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.8,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
           <div>LAST UPDATED</div>
           <div>12.25.25</div>
-        </div>
+        </motion.div>
 
-        {/* Location (bottom right) */}
-        <div className="absolute bottom-8 right-8 text-xs text-black/40 text-right">
+        {/* Location (bottom right) - pops in after name */}
+        <motion.div
+          className="absolute bottom-8 right-8 text-xs text-black text-right"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.8,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+        >
           <div>SF Bay Area</div>
           <div>Los Angeles</div>
-        </div>
+        </motion.div>
       </motion.section>
 
       {/* Experience Section */}
@@ -99,22 +117,19 @@ export function HomePage({ onNavigate }: HomePageProps) {
         style={{ y: courseworkY }}
       >
         <FocusInView>
-          <h2 className="text-black/90">Coursework</h2>
+          <h2 className="text-xl text-black/90">Coursework</h2>
         </FocusInView>
         <CourseworkSection />
       </motion.section>
 
       {/* CTA to Projects */}
-      <motion.section 
-        className="py-32 px-6 text-center"
-        style={{ y: ctaY }}
-      >
+      <motion.section className="py-32 px-6 text-center" style={{ y: ctaY }}>
         <FocusInView>
           <button
-            onClick={() => onNavigate('projects')}
+            onClick={() => onNavigate("projects")}
             className="group px-8 py-4 rounded-full bg-black text-white hover:bg-black/90 transition-all duration-300 hover:scale-105"
             style={{
-              boxShadow: '0 8px 24px rgba(0,0,0,0.15)'
+              boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
             }}
           >
             View Projects
