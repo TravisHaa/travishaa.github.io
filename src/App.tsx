@@ -4,6 +4,7 @@ import { HomePage } from './components/HomePage';
 import { AboutPage } from './components/AboutPage';
 import { ProjectsPage } from './components/ProjectsPage';
 import { ProjectDetail } from './components/ProjectDetail';
+import { Footer } from './components/Footer';
 
 type Page = 'home' | 'about' | 'projects' | 'project-detail';
 
@@ -39,6 +40,8 @@ export default function App() {
       {currentPage === 'project-detail' && selectedProjectId && (
         <ProjectDetail projectId={selectedProjectId} onBack={handleBackToProjects} />
       )}
+      
+      <Footer />
     </div>
   );
 }

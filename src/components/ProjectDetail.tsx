@@ -39,22 +39,22 @@ const projectData: { [key: string]: ProjectData } = {
 
     githubUrl: "https://github.com/TravisHaa/amuse-visionos",
   },
-  "2": {
-    id: "2",
-    title: "FittedUp",
-    subtitle: "IOS App for automated Clothes Reselling",
-    heroImage: "/logos/fittedup.png",
-    description:
-      "FittedUp is an iOS application that streamlines the process of reselling clothes by automating listing creation, price suggestions, and marketplace integration. The app uses GPT's vision API to identify clothing items and generate optimized listings based off three images of the clothing item.",
-    techStack: ["Swift", "SwiftUI", "UIKit", "GPT API", "Firebase"],
-    problem:
-      "Reselling clothes manually is time-consuming and requires significant effort to photograph, describe, and price items. Many people have closets full of unworn clothes but lack the time or knowledge to effectively resell them.",
-    solution:
-      "Built an iOS app to automatically identify clothing items from photos, extract key features, and generate compelling product descriptions. Integrated price suggestion algorithms based on brand, condition, and market trends. Streamlined the listing process to take minutes instead of hours.",
-    outcome:
-      "Reduced listing creation time by 80%. Successfully integrated with major reselling platforms. Helped users monetize their unused clothing more effectively.",
-    githubUrl: undefined,
-  },
+  // "2": {
+  //   id: "2",
+  //   title: "FittedUp",
+  //   subtitle: "IOS App for automated Clothes Reselling",
+  //   heroImage: "/logos/fittedup.png",
+  //   description:
+  //     "FittedUp is an iOS application that streamlines the process of reselling clothes by automating listing creation, price suggestions, and marketplace integration. The app uses GPT's vision API to identify clothing items and generate optimized listings based off three images of the clothing item.",
+  //   techStack: ["Swift", "SwiftUI", "UIKit", "GPT API", "Firebase"],
+  //   problem:
+  //     "Reselling clothes manually is time-consuming and requires significant effort to photograph, describe, and price items. Many people have closets full of unworn clothes but lack the time or knowledge to effectively resell them.",
+  //   solution:
+  //     "Built an iOS app to automatically identify clothing items from photos, extract key features, and generate compelling product descriptions. Integrated price suggestion algorithms based on brand, condition, and market trends. Streamlined the listing process to take minutes instead of hours.",
+  //   outcome:
+  //     "Reduced listing creation time by 80%. Successfully integrated with major reselling platforms. Helped users monetize their unused clothing more effectively.",
+  //   githubUrl: undefined,
+  // },
   "3": {
     id: "3",
     title: "EMG2QWERTY Keystroke Prediction",

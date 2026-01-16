@@ -22,14 +22,14 @@ const projects: Project[] = [
     imageUrl: "/logos/amuse.png",
     githubUrl: "https://github.com/TravisHaa/amuse-visionos",
   },
-  {
-    id: "2",
-    title: "FittedUp",
-    subtitle: "IOS App for automated Clothes Reselling",
-    date: "2025",
-    imageUrl: "/logos/fittedup.png",
-    githubUrl: undefined,
-  },
+  // {
+  //   id: "2",
+  //   title: "FittedUp",
+  //   subtitle: "IOS App for automated Clothes Reselling",
+  //   date: "2025",
+  //   imageUrl: "/logos/fittedup.png",
+  //   githubUrl: undefined,
+  // },
   {
     id: "3",
     title: "EMG2QWERTY Keystroke Prediction",

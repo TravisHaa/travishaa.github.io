@@ -12,7 +12,9 @@ const coursework: CourseCategory[] = [
       'CS32: Object Oriented Programming',
       'CS33: Introduction to Computer Organization',
       'CS35L: Software Construction',
+      'CS118: Networking',
       'CSM51A: Logic Design and Digital Systems',
+      'CSM152A: Digital Design',
       'ECE3: Introduction to Electrical Engineering'
     ]
   },
@@ -27,6 +29,7 @@ const coursework: CourseCategory[] = [
   {
     category: 'Graphics / Vision',
     courses: [
+      'CS188: Introduction To Robotics',
       'Computer Graphics',
       'Image Processing',
       'Interactive Systems',
@@ -38,7 +41,6 @@ const coursework: CourseCategory[] = [
     courses: [
       'CS131: Programming Languages',
       'CS180: Algorithms and Data Structures',
-      'CS181: Theory of Computing',
       'Math 61: Discrete Mathematics'
     ]
   }

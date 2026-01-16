@@ -81,7 +81,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           }}
         >
           <div>LAST UPDATED</div>
-          <div>12.25.25</div>
+          <div>1.15.25</div>
         </motion.div>
 
         {/* Location (bottom right) - pops in after name */}

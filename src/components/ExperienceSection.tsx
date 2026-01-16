@@ -15,6 +15,7 @@ interface Experience {
   techStack: string[];
   impact?: string;
   link?: string;
+  link2?: string;
 }
 
 const experiences: Experience[] = [
@@ -24,13 +25,13 @@ const experiences: Experience[] = [
     logo: "/logos/unitreego2.avif",
     role: "Deep Learning Undergraduate Researcher",
     date: "Oct 2025 - Present",
-    shortDescription:
-      "Training a Unitree Go2 quadruped using NVIDIA Isaac Sim",
+    shortDescription: "Training a Unitree Go2 quadruped using NVIDIA Isaac Sim",
     details: [
       "Using Isaac Sim and ROS 2 to teleoperate a unitree Go2 quadruped equipped with a robotic arm",
       "Utilizing Isaac Lab to train the Go2 Robot to perform basic maneuvers with reinforcement learning",
     ],
     techStack: ["Isaac Sim", "ROS2", "PyTorch"],
+    link: "https://www.kaolab.org/"
   },
   {
     id: "2",
@@ -63,6 +64,7 @@ const experiences: Experience[] = [
     ],
     techStack: ["React", "Firebase", "TypeScript"],
     link: "https://github.com/novaforgood/ICV",
+    link2: "https://www.novaforgood.org",
   },
   {
     id: "4",
@@ -79,7 +81,7 @@ const experiences: Experience[] = [
     ],
     techStack: ["Python", "OpenCV", "KLayout", "GDSPY"],
     impact: "Presented research at university symposium",
-    link: "https://github.com/TravisHaa/CHIPS_research"
+    link: "https://github.com/TravisHaa/CHIPS_research",
   },
 ];
 
@@ -150,6 +152,30 @@ export function ExperienceSection() {
                       }}
                     >
                       {exp.link}
+                    </a>
+                  )}
+                  {exp.link2 && (
+                    <a
+                      href={exp.link2}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()} // Prevent card expansion when clicking link
+                      className="text-sm cursor-pointer mt-2 block"
+                      style={{
+                        color: "#2563eb", // blue-600
+                        textDecoration: "none",
+                        display: "block",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.color = "#1d4ed8"; // blue-700
+                        e.currentTarget.style.textDecoration = "underline";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.color = "#2563eb"; // blue-600
+                        e.currentTarget.style.textDecoration = "none";
+                      }}
+                    >
+                      {exp.link2}
                     </a>
                   )}
                 </div>
