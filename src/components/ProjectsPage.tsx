@@ -62,7 +62,7 @@ interface ProjectsPageProps {
 
 export function ProjectsPage({ onProjectClick }: ProjectsPageProps) {
   return (
-    <div className="pt-32 pb-20 px-6">
+    <div id="projects" className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <FocusInView>
           <h1 className="mb-4 text-black/90">Projects</h1>

@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
 interface NavigationProps {
-  currentPage: "home" | "projects" | "about";
-  onNavigate: (page: "home" | "projects" | "about") => void;
+  currentPage: "home" | "projects";
+  onNavigate: (page: "home" | "projects") => void;
 }
 
 const navItems = [
@@ -15,7 +15,7 @@ const navItems = [
 
 export function Navigation({ currentPage, onNavigate }: NavigationProps) {
   const [activeTab, setActiveTab] = useState<
-    "home" | "projects" | "about" | "contact"
+    "home" | "projects" | "contact"
   >(currentPage);
   const [showContactDropdown, setShowContactDropdown] = useState(false);
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
@@ -39,8 +39,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
       setShowContactDropdown(!showContactDropdown);
     } else {
       setShowContactDropdown(false);
-      setActiveTab(id as "home" | "projects" | "about");
-      onNavigate(id as "home" | "projects" | "about");
+      setActiveTab(id as "home" | "projects");
+      onNavigate(id as "home" | "projects");
     }
   };
 

@@ -1,15 +1,54 @@
+import React from "react";
 import { motion } from "motion/react";
 import { Github, Linkedin, Mail } from "lucide-react";
 
-export function Footer() {
+interface FooterProps {
+  currentPage?: "home" | "projects";
+  onNavigate?: (page: "home" | "projects") => void;
+}
+
+export function Footer({ currentPage, onNavigate }: FooterProps) {
   const currentYear = new Date().getFullYear();
+
+  // Handle navigation link clicks
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    page: "home" | "projects"
+  ) => {
+    e.preventDefault();
+    
+    if (page === "home") {
+      // If already on home page, scroll to top
+      if (currentPage === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        // Navigate to home page
+        onNavigate?.("home");
+        // Scroll to top after navigation
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 100);
+      }
+    } else {
+      // Navigate to projects page
+      onNavigate?.(page);
+      // Scroll to top of the new page after navigation
+      setTimeout(() => {
+        const element = document.getElementById(page);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
 
   // Footer links organized by category
   const footerLinks = {
     Navigation: [
-      { label: "Home", href: "#home" },
-      { label: "Projects", href: "#projects" },
-      { label: "About", href: "#about" },
+      { label: "Home", href: "#home", page: "home" as const },
+      { label: "Projects", href: "#projects", page: "projects" as const },
     ],
     Social: [
       { label: "GitHub", href: "https://github.com/TravisHaa", icon: Github },
@@ -65,7 +104,8 @@ export function Footer() {
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-black/60 hover:text-black transition-colors duration-300"
+                    onClick={(e) => handleNavClick(e, link.page)}
+                    className="text-sm text-black/60 hover:text-black transition-colors duration-300 cursor-pointer"
                   >
                     {link.label}
                   </a>

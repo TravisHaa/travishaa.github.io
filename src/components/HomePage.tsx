@@ -3,29 +3,125 @@ import { FocusInView } from "./FocusInView";
 import { ExperienceSection } from "./ExperienceSection";
 import { CourseworkSection } from "./CourseworkSection";
 import { ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useTransform, useScroll } from "motion/react";
 
 interface HomePageProps {
   onNavigate: (page: "projects") => void;
 }
 
+// Define the transition zone and target scroll position
+const TRANSITION_START = 0;
+const TRANSITION_END = 500; // End of hero fade animation
+const TARGET_SCROLL = 600; // Perfect position after transition completes
+
 export function HomePage({ onNavigate }: HomePageProps) {
   const { scrollY } = useScroll();
+  const isScrollingRef = useRef(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Transform values for parallax effect
   const heroY = useTransform(scrollY, [0, 800], [0, -150]);
-  const heroOpacity = useTransform(scrollY, [0, 400], [1, 0]);
-  const heroScale = useTransform(scrollY, [0, 400], [1, 0.95]);
+  const heroOpacity = useTransform(scrollY, [0, TRANSITION_END], [1, 0]);
+  const heroScale = useTransform(scrollY, [0, TRANSITION_END], [1, 0.95]);
 
   const experienceY = useTransform(scrollY, [400, 1200], [100, -50]);
   const courseworkY = useTransform(scrollY, [1000, 1600], [100, -50]);
   const ctaY = useTransform(scrollY, [1200, 2000], [100, 0]);
 
+  // Handle scroll snap behavior - intercepts scroll gestures in transition zone
+  useEffect(() => {
+    let touchStartY = 0;
+    let isTouching = false;
+
+    // Function to snap scroll to target position
+    const snapToTarget = () => {
+      if (isScrollingRef.current) return; // Prevent multiple snaps
+      
+      isScrollingRef.current = true;
+      window.scrollTo({
+        top: TARGET_SCROLL,
+        behavior: "smooth",
+      });
+
+      // Reset scrolling flag after animation completes
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 1000);
+    };
+
+    // Handle wheel events (mouse wheel, trackpad)
+    const handleWheel = (e: WheelEvent) => {
+      const currentScroll = window.scrollY;
+      
+      // If we're in the transition zone and scrolling down
+      if (
+        currentScroll >= TRANSITION_START && 
+        currentScroll < TARGET_SCROLL && 
+        e.deltaY > 0 && 
+        !isScrollingRef.current
+      ) {
+        e.preventDefault();
+        snapToTarget();
+      }
+    };
+
+    // Handle touch events for mobile devices
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+      isTouching = true;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isTouching) return;
+      
+      const currentScroll = window.scrollY;
+      const touchCurrentY = e.touches[0].clientY;
+      const touchDelta = touchStartY - touchCurrentY; // Positive when scrolling down
+      
+      // If we're in the transition zone and scrolling down with significant movement
+      if (
+        currentScroll >= TRANSITION_START && 
+        currentScroll < TARGET_SCROLL && 
+        touchDelta > 10 && // Require minimum movement to trigger
+        !isScrollingRef.current
+      ) {
+        e.preventDefault();
+        isTouching = false;
+        snapToTarget();
+      }
+    };
+
+    const handleTouchEnd = () => {
+      isTouching = false;
+    };
+
+    // Add event listeners
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+    window.addEventListener("touchend", handleTouchEnd, { passive: true });
+    
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+      window.removeEventListener("touchend", handleTouchEnd);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="w-full">
       {/* Hero Section */}
       <motion.section
+        id="home"
         className="relative h-screen flex items-center justify-center overflow-hidden"
         style={{ y: heroY, opacity: heroOpacity, scale: heroScale }}
       >
