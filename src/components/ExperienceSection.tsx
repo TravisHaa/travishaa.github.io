@@ -27,8 +27,8 @@ const experiences: Experience[] = [
     date: "Oct 2025 - Present",
     shortDescription: "Training a Unitree Go2 quadruped using NVIDIA Isaac Sim",
     details: [
-      "Using Isaac Sim and ROS 2 to teleoperate a unitree Go2 quadruped equipped with a robotic arm",
-      "Utilizing Isaac Lab to train the Go2 Robot to perform basic maneuvers with reinforcement learning",
+      "Training a unitree Go2 quadruped equipped with a D1 servo arm to perform dexterous manipulation and locomotion tasks with reinforcement and imitation learning.",
+      "Utilizing ROS2 and Isaac Sim omnigraphs to teleoperate Go2 quadruped and stream join states.",
     ],
     techStack: ["Isaac Sim", "ROS2", "PyTorch"],
     link: "https://www.kaolab.org/"
@@ -42,10 +42,10 @@ const experiences: Experience[] = [
     shortDescription:
       "Developed PlutoTV experiences with focus on performance and accessibility",
     details: [
-      "Built generalized data-fetching utility powering both Paramount+ and PlutoTV APIs, enabling shared application logic across distributed micro-services",
-      "Developed accessibility and internationalization features (TTS, translation, etc.), expanding customer base to Brazil and various European Countries",
-      "Implemented maturity-rated content filetering methods for Kids Mode",
-      "Utilized Svelte 4 development practices to optimize for PlutoTV legacy CTV devices with a 75 MB runtime constraint",
+      "Built generalized data-fetching utility powering both Paramount+ and PlutoTV APIs, enabling shared application logic across distributed micro-services.",
+      "Developed accessibility and internationalization features (TTS, translation, etc.), expanding customer base to Brazil and various European Countries.",
+      "Implemented maturity-rated content filetering methods for Kids Mode.",
+      "Utilized Svelte 4 development practices to optimize for PlutoTV legacy CTV devices with a 75 MB runtime constraint.",
     ],
     techStack: ["Svelte", "TypeScript", "Git"],
     impact: "Scaled PlutoTV apps to 20 countries with < 300 ms render latency",
@@ -60,7 +60,7 @@ const experiences: Experience[] = [
     details: [
       "Leading code reviews, sprint planning, and iterative development cycles across 8-member engineering + design teams building nonprofit software.",
       "Building a external P2P fundraising platform for Drop in the Bucket, integrated with Stripe Checkout and PayPal API. Automated campaign moderation and recurring-donation tracking to cut admin workload by 70%.",
-      "Engineered a multi-tenant data management platform for Inner City Visions to track services provided to homeless populations, digitizing records for 1,000+ individuals with live transcription and e-signature workflows",
+      "Engineered a multi-tenant data management platform for Inner City Visions to track services provided to homeless populations, digitizing records for 1,000+ individuals with live transcription and e-signature workflows.",
     ],
     techStack: ["React", "Firebase", "TypeScript"],
     link: "https://github.com/novaforgood/ICV",
@@ -76,7 +76,7 @@ const experiences: Experience[] = [
       "Created and sped up computer vision pipeline for MicroLED Displays and Computer Chip Component Analysis",
     details: [
       "Wrote OpenCV algorithms to achieve a 90.95% increase in micron-level accuracy and a 27% increase in algorithm performance using novel approaches (NumPy, scipy, Pandas) to mitigate image distortions, calculate die shifts, and refine template matching and edge detection techniques.",
-      "Automated microLED contact-pairing in Python using OpenCV and gdspy to eliminate flexpath overlaps and streamline GDSII routing workflows, overwriting 57% more microLED contact defects",
+      "Automated microLED contact-pairing in Python using OpenCV and gdspy to eliminate flexpath overlaps and streamline GDSII routing workflows, overwriting 57% more microLED contact defects.",
       "Developed A* algorithms with gdspy to calculate optimal 3D wire routing between semiconductor dies, minimizing wiring complexity and reducing signal interference in integrated circuit design.",
     ],
     techStack: ["Python", "OpenCV", "KLayout", "GDSPY"],

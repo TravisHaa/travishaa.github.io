@@ -53,7 +53,8 @@ export function Navigation({ currentPage, onNavigate }: NavigationProps) {
     setShowContactDropdown(false);
     // Contact actions
     if (type === "email") {
-      window.location.href = "mailto:travisha110@g.ucla.edu";
+
+      window.open("https://mail.google.com/mail/?view=cm&fs=1&to=travisha110@g.ucla.edu", "_blank");
     } else if (type === "linkedin") {
       window.open("https://www.linkedin.com/in/travis-ha-/", "_blank");
     } else if (type === "github") {

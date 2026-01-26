@@ -14,7 +14,7 @@ export function Footer() {
     Social: [
       { label: "GitHub", href: "https://github.com/TravisHaa", icon: Github },
       { label: "LinkedIn", href: "https://linkedin.com/in/travis-ha", icon: Linkedin },
-      { label: "Email", href: "mailto:travisha@ucla.edu", icon: Mail },
+      { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=travisha110@g.ucla.edu", icon: Mail },
     ],
   };
 
@@ -38,11 +38,17 @@ export function Footer() {
                 Software Engineer
               </p>
             </div>
-            <p className="text-sm text-black/60 leading-relaxed max-w-xs">
-              Building innovative solutions at the intersection of software engineering,
-              AI, and wearable technology.
-            </p>
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=travisha110@g.ucla.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-black/60 hover:text-black transition-colors duration-300 inline-block"
+            >
+              travisha110@g.ucla.edu
+            </a>
+            
           </motion.div>
+          
 
           {/* Navigation Links */}
           <motion.div

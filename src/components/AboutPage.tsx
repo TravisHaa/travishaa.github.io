@@ -14,24 +14,24 @@ export function AboutPage() {
   const skills = [
     {
       icon: Code2,
-      title: "Engineering",
+      title: "Systems & Software",
       description:
-        "Building robust, scalable applications with modern web technologies",
-      technologies: ["React", "TypeScript", "Node.js", "Python", "Java"],
+        "Ship production apps and research code—from PlutoTV micro-services to vision pipelines and C++ optimization",
+      technologies: ["C++", "Python", "React", "Svelte", "TypeScript", "PyTorch"],
     },
     {
       icon: Palette,
-      title: "Design",
+      title: "ML & Robotics",
       description:
-        "Creating intuitive interfaces with attention to detail and user experience",
-      technologies: ["Figma", "Tailwind", "Motion", "UI/UX", "Design Systems"],
+        "Deep learning, reinforcement learning, and robotics—Isaac Sim, ROS 2, computer vision, and EMG-based interfaces",
+      technologies: ["Isaac Sim", "ROS 2", "OpenCV", "RL", "Computer Vision"],
     },
     {
       icon: Sparkles,
-      title: "Innovation",
+      title: "Research & Impact",
       description:
-        "Exploring new technologies and pushing boundaries of what's possible",
-      technologies: ["AI/ML", "Canvas", "WebGL", "Animations", "Performance"],
+        "Academic and industry work: semiconductor vision, accessibility, i18n, and nonprofit platforms",
+      technologies: ["CHIPS", "Accessibility", "i18n", "Nova Tech for Good"],
     },
   ];
 
@@ -59,15 +59,13 @@ export function AboutPage() {
 
               <FocusInView delay={0.08}>
                 <h1 className="mb-6 text-black/90 text-5xl md:text-6xl font-bold tracking-tight leading-[1.1]">
-                  Building the future, one pixel at a time
+                  From C++ to deep learning—building systems that move and scale
                 </h1>
               </FocusInView>
 
               <FocusInView delay={0.16}>
                 <p className="text-lg text-black/60 max-w-2xl mx-auto md:mx-0">
-                  I'm a designer and engineer passionate about creating
-                  beautiful, functional experiences that delight users and solve
-                  real problems.
+                  I'm a CSE student at UCLA passionate about speeding up software and developing new forms of interaction/perception.
                 </p>
               </FocusInView>
             </div>
@@ -89,23 +87,23 @@ export function AboutPage() {
           <FocusInView delay={0.05}>
             <div className="space-y-6 text-black/70 leading-relaxed">
               <p>
-                I'm currently studying Computer Science at UC San Diego, where
-                I'm constantly exploring the intersection of design and
-                technology. My journey began with a curiosity about how things
-                work, which evolved into a passion for building them.
+                I'm studying Computer Science and Engineering at UCLA, with a
+                focus on fullstack, deep learning, and computer vision. I've worked on
+                everything from training a Unitree Go2 quadruped with Isaac Sim
+                and RL at the Neural Engineering and Computation Lab to building
+                PlutoTV experiences at Paramount and leading engineering at Nova,
+                Tech for Good.
               </p>
               <p>
-                What excites me most is the challenge of translating complex
-                problems into elegant, intuitive solutions. Whether it's
-                crafting pixel-perfect interfaces or architecting scalable
-                systems, I believe that great design and engineering go hand in
-                hand.
+                I'm drawn to problems that sit at the intersection of low-level
+                performance and real-world impact—whether that's speeding up
+                computer-vision pipelines for microLED displays at CHIPS,
+                shipping accessibility and i18n features that scale apps to 20+
+                countries, or building EMG-to-keystroke prediction and VisionOS
+                gesture controllers.
               </p>
               <p>
-                When I'm not coding or designing, you'll find me exploring the
-                latest web technologies, contributing to open source, or staying
-                up-to-date with design trends. I'm always eager to learn and
-                push the boundaries of what's possible on the web.
+                When I'm not in the lab or shipping code, I'm usually playing pickleball, trying new foods, or biking.
               </p>
             </div>
           </FocusInView>
@@ -175,7 +173,7 @@ export function AboutPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <FocusInView delay={0.05}>
               <div className="space-y-3">
-                <h3 className="text-black/90">User-Centered Design</h3>
+                <h3 className="text-black/90">User-Centered Engineering</h3>
                 <p className="text-black/60 leading-relaxed">
                   Every decision I make starts with the user. I believe in
                   creating experiences that are not just beautiful, but
@@ -186,10 +184,11 @@ export function AboutPage() {
 
             <FocusInView delay={0.1}>
               <div className="space-y-3">
-                <h3 className="text-black/90">Attention to Detail</h3>
+                <h3 className="text-black/90">Rigor in Implementation</h3>
                 <p className="text-black/60 leading-relaxed">
-                  The smallest details often make the biggest difference. From
-                  micro-interactions to typography, every pixel matters.
+                  Whether it's squeezing performance out of vision pipelines,
+                  meeting strict runtime constraints, or improving algorithmic
+                  accuracy, I focus on getting the details right.
                 </p>
               </div>
             </FocusInView>
@@ -198,8 +197,9 @@ export function AboutPage() {
               <div className="space-y-3">
                 <h3 className="text-black/90">Continuous Learning</h3>
                 <p className="text-black/60 leading-relaxed">
-                  Technology evolves rapidly, and so do I. I'm committed to
-                  staying current and always improving my craft.
+                  I stay current on ML, robotics, and systems—from new RL
+                  methods to better tooling—and apply what I learn in both
+                  research and product.
                 </p>
               </div>
             </FocusInView>
@@ -208,8 +208,9 @@ export function AboutPage() {
               <div className="space-y-3">
                 <h3 className="text-black/90">Collaboration</h3>
                 <p className="text-black/60 leading-relaxed">
-                  The best work happens when diverse perspectives come together.
-                  I thrive in collaborative environments.
+                  I've led cross-functional teams at Nova and worked closely with
+                  researchers at NECL and CHIPS. I do my best work when
+                  collaborating with others.
                 </p>
               </div>
             </FocusInView>
@@ -266,7 +267,7 @@ export function AboutPage() {
                 </a>
 
                 <a
-                  href="https://github.com"
+                  href="https://github.com/TravisHaa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300 hover:scale-105"
