@@ -19,7 +19,7 @@ const projects: Project[] = [
     id: "9",
     title: "CUDA Kernel Practice",
     subtitle:
-      "A hands-on collection of custom CUDA kernels written to explore GPU programming — covering parallel reductions, matrix operations, memory coalescing, and other low-level GPU patterns",
+      "A hands-on collection of custom CUDA kernels I've written to explore GPU programming",
     award: "Work in Progress",
     date: "2026",
     imageUrl: "/logos/cuda.png",

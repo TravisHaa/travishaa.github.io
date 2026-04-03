@@ -23,12 +23,12 @@ const projectData: { [key: string]: ProjectData } = {
     subtitle: "A hands-on collection of custom CUDA kernels written to explore GPU programming",
     heroImage: "/logos/cuda.png",
     description:
-      "A growing set of CUDA kernels written from scratch to build intuition for GPU programming. The repo covers fundamental patterns like parallel reductions, matrix operations, memory coalescing, and thread/block organization — the kind of low-level GPU work that underpins high-performance ML and systems code.",
+      "A growing set of CUDA kernels written from scratch to build intuition for GPU programming. The repo aims to cover fundamental patterns like parallel reductions, matrix operations, memory coalescing, and thread/block organization — the kind of low-level GPU work that underpins high-performance ML and systems code.",
     techStack: ["CUDA", "C++", "NVIDIA GPU"],
     problem:
-      "GPU programming is notoriously hard to learn by reading alone — the mental model for thread hierarchies, memory access patterns, and parallelism only clicks through hands-on experimentation.",
+      "GPU programming is notoriously hard to learn by reading alone (been reading Programming Massively Parallel Processors) — the mental model for thread hierarchies, memory access patterns, and parallelism only clicks through hands-on experimentation.",
     solution:
-      "Writing CUDA kernels directly, starting from simple parallel reductions and working up to more complex patterns. Each kernel is an exercise in understanding how to map a problem onto the GPU's execution model efficiently.",
+      "Writing CUDA kernels directly, starting from simple parallel reductions and working up to more complex patterns. Each kernel is an exercise to help me understand how to map a problem onto the GPU's execution model efficiently.",
     githubUrl: "https://github.com/TravisHaa/CUDA_practice",
   },
   "1": {
@@ -120,7 +120,7 @@ const projectData: { [key: string]: ProjectData } = {
       "A real-time hand gesture recognition web application built for CS188 (Introduction to AI). The project uses computer vision to detect and classify hand gestures through a webcam, mapping them to interactions in the browser.",
     techStack: ["Python", "OpenCV", "MediaPipe", "React", "TypeScript"],
     problem:
-      "Exploring how machine learning and computer vision can enable natural, touch-free human-computer interaction using only a webcam — no specialized hardware required.",
+      "a range of communication disabilities such as Dysarthria create a difficultbarrier between accessibility and human-robot interaction, even in the face of modern robotic innovations. Hand gestures are a compelling alternative: they are silent, require no additional hardware, and can be issued from a distance while maintaining visual attention on the robot.",
     solution:
       "Built a pipeline using MediaPipe for hand landmark detection and a custom classifier to recognize gestures in real time. The frontend renders live feedback and responds to gesture commands.",
     demoUrl: "https://cs188-cereal-hand-gestures.vercel.app/",
