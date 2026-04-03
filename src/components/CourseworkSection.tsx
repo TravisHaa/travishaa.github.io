@@ -13,33 +13,31 @@ const coursework: CourseCategory[] = [
       'CS33: Introduction to Computer Organization',
       'CS35L: Software Construction',
       'CS118: Networking',
-      'CSM51A: Logic Design and Digital Systems',
-      'CSM152A: Digital Design',
-      'ECE3: Introduction to Electrical Engineering'
     ]
   },
   {
     category: 'ML / AI',
     courses: [
+      'CS133: Parallel and Distributed Computing',
       'ECE147: Deep Learning',
       'ECE239AS: Deep Learning II',
-      'Computer Vision',
     ]
   },
   {
-    category: 'Graphics / Vision',
+    category: 'Hardware',
     courses: [
       'CS188: Introduction To Robotics',
-      'Computer Graphics',
-      'Image Processing',
-      'Interactive Systems',
-      '3D Modeling'
+      'ECE100: Electrical and Electronic Circuits',
+      'ECE3: Introduction to Electrical Engineering',
+      'CSM51A: Logic Design and Digital Systems',
+      'CSM152A: Digital Design',
     ]
   },
   {
     category: 'Theory',
     courses: [
       'CS131: Programming Languages',
+      'CS181: Theory of Computing',
       'CS180: Algorithms and Data Structures',
       'Math 61: Discrete Mathematics'
     ]

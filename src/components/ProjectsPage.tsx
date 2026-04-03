@@ -1,7 +1,7 @@
 import { FocusInView } from "./FocusInView";
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import { Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 
 interface Project {
   id: string;
@@ -11,9 +11,44 @@ interface Project {
   date: string;
   imageUrl: string;
   githubUrl?: string;
+  url?: string;
 }
 
 const projects: Project[] = [
+  {
+    id: "9",
+    title: "CUDA Kernel Practice",
+    subtitle:
+      "A hands-on collection of custom CUDA kernels written to explore GPU programming — covering parallel reductions, matrix operations, memory coalescing, and other low-level GPU patterns",
+    award: "Work in Progress",
+    date: "2026",
+    imageUrl: "/logos/cuda.png",
+    githubUrl: "https://github.com/TravisHaa/CUDA_practice",
+  },
+  {
+    id: "6",
+    title: "Cereal Hand Gestures",
+    subtitle: "CS188 AI project — real-time hand gesture recognition web app",
+    date: "2026",
+    imageUrl: "/logos/cereal-gestures.png",
+    url: 'https://cs188-cereal-hand-gestures.vercel.app/',
+  },
+  {
+    id: "7",
+    title: "CHIPS Lab Research",
+    subtitle: "Computer vision pipeline for semiconductor die alignment & routing",
+    date: "2024 - 2025",
+    imageUrl: "/logos/chips-research.png",
+    githubUrl: "https://github.com/TravisHaa/CHIPS_research",
+  },
+  {
+    id: "8",
+    title: "Inner City Visions",
+    subtitle: "Client intake & case management platform for LA nonprofit ICV",
+    date: "2025",
+    imageUrl: "/logos/icv.png",
+    githubUrl: "https://github.com/novaforgood/ICV",
+  },
   {
     id: "1",
     title: "Amuse",
@@ -22,14 +57,6 @@ const projects: Project[] = [
     imageUrl: "/logos/amuse.png",
     githubUrl: "https://github.com/TravisHaa/amuse-visionos",
   },
-  // {
-  //   id: "2",
-  //   title: "FittedUp",
-  //   subtitle: "IOS App for automated Clothes Reselling",
-  //   date: "2025",
-  //   imageUrl: "/logos/fittedup.png",
-  //   githubUrl: undefined,
-  // },
   {
     id: "3",
     title: "EMG2QWERTY Keystroke Prediction",
@@ -65,7 +92,7 @@ export function ProjectsPage({ onProjectClick }: ProjectsPageProps) {
     <div id="projects" className="pt-32 pb-20 px-6">
       <div className="max-w-7xl mx-auto">
         <FocusInView>
-          <h1 className="mb-4 text-black/90">Projects</h1>
+          <h1 className="mb-4 text-black/90">Work</h1>
         </FocusInView>
 
         {/* <FocusInView delay={0.08}>
@@ -124,23 +151,41 @@ export function ProjectsPage({ onProjectClick }: ProjectsPageProps) {
                   <div className="text-xs text-black/40 mb-2">
                     {project.date}
                   </div>
-                  <div className="mb-1 flex items-center gap-2">
+                  <div className="mb-2">
                     <div
                       className="text-black/90 cursor-pointer"
                       onClick={() => onProjectClick(project.id)}
                     >
                       {project.title}
                     </div>
+                  </div>
+                  <div className="mb-3 flex flex-wrap items-center gap-2">
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="flex items-center gap-1.5 text-blue-500 hover:text-blue-600 transition-colors px-2 py-1 rounded-md hover:bg-blue-50"
+                        className="group inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 transition-colors hover:border-blue-300 hover:bg-blue-100"
                       >
-                        <Github className="w-5 h-5" />
-                        <span className="text-xs font-medium">Github</span>
+                        <Github className="h-4 w-4 text-blue-600 transition-colors group-hover:text-blue-700" />
+                        <span className="text-xs font-semibold text-blue-700 transition-colors group-hover:text-blue-800">
+                          View Code
+                        </span>
+                      </a>
+                    )}
+                    {project.url && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="group inline-flex items-center gap-1.5 rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 transition-colors hover:border-blue-300 hover:bg-blue-100"
+                      >
+                        <ExternalLink className="h-4 w-4 text-blue-600 transition-colors group-hover:text-blue-700" />
+                        <span className="text-xs font-semibold text-blue-700 transition-colors group-hover:text-blue-800">
+                          Visit Website
+                        </span>
                       </a>
                     )}
                   </div>

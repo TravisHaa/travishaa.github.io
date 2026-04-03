@@ -17,6 +17,20 @@ interface ProjectData {
 }
 
 const projectData: { [key: string]: ProjectData } = {
+  "9": {
+    id: "9",
+    title: "CUDA Kernel Practice",
+    subtitle: "A hands-on collection of custom CUDA kernels written to explore GPU programming",
+    heroImage: "/logos/cuda.png",
+    description:
+      "A growing set of CUDA kernels written from scratch to build intuition for GPU programming. The repo covers fundamental patterns like parallel reductions, matrix operations, memory coalescing, and thread/block organization — the kind of low-level GPU work that underpins high-performance ML and systems code.",
+    techStack: ["CUDA", "C++", "NVIDIA GPU"],
+    problem:
+      "GPU programming is notoriously hard to learn by reading alone — the mental model for thread hierarchies, memory access patterns, and parallelism only clicks through hands-on experimentation.",
+    solution:
+      "Writing CUDA kernels directly, starting from simple parallel reductions and working up to more complex patterns. Each kernel is an exercise in understanding how to map a problem onto the GPU's execution model efficiently.",
+    githubUrl: "https://github.com/TravisHaa/CUDA_practice",
+  },
   "1": {
     id: "1",
     title: "Amuse",
@@ -97,6 +111,49 @@ const projectData: { [key: string]: ProjectData } = {
       "Creating engaging physics-based games requires precise collision detection, realistic physics simulation, and smooth rendering. Many game engines abstract these complexities, but building from scratch provides deeper understanding.",
     githubUrl: "https://github.com/TravisHaa/cs32proj3",
   },
+  "6": {
+    id: "6",
+    title: "Cereal Hand Gestures",
+    subtitle: "CS188 AI project — real-time hand gesture recognition web app",
+    heroImage: "/logos/cereal-gestures.png",
+    description:
+      "A real-time hand gesture recognition web application built for CS188 (Introduction to AI). The project uses computer vision to detect and classify hand gestures through a webcam, mapping them to interactions in the browser.",
+    techStack: ["Python", "OpenCV", "MediaPipe", "React", "TypeScript"],
+    problem:
+      "Exploring how machine learning and computer vision can enable natural, touch-free human-computer interaction using only a webcam — no specialized hardware required.",
+    solution:
+      "Built a pipeline using MediaPipe for hand landmark detection and a custom classifier to recognize gestures in real time. The frontend renders live feedback and responds to gesture commands.",
+    demoUrl: "https://cs188-cereal-hand-gestures.vercel.app/",
+  },
+  "8": {
+    id: "8",
+    title: "Inner City Visions",
+    subtitle: "Client intake & case management platform for LA nonprofit ICV",
+    heroImage: "/logos/icv.png",
+    description:
+      "A full-stack web application built for Inner City Visions (ICV), an LA-based nonprofit, to streamline client intake, case management, and real-time service outcome tracking. Built through Nova, UCLA's software development nonprofit.",
+    techStack: ["Next.js", "TypeScript", "Firebase", "Resend", "Tailwind CSS"],
+    problem:
+      "ICV was managing client intake and case tracking through manual, paper-based workflows — making it difficult to monitor service outcomes and coordinate case workers efficiently.",
+    solution:
+      "Built a full-stack client management platform with authenticated case worker accounts, a client intake flow, case tracking dashboard, and real-time updates backed by Firebase. Integrated Resend for automated email notifications.",
+  },
+  "7": {
+    id: "7",
+    title: "CHIPS Lab Research",
+    subtitle: "Computer vision pipeline for semiconductor die alignment & routing",
+    heroImage: "/logos/chips-research.png",
+    description:
+      "Research conducted in the CHIPS Lab on TrueAdapt™ technology for fan-out wafer level packaging (FOWLP). Developed computer vision scripts and routing algorithms to automate semiconductor die analysis and wire routing.",
+    techStack: ["Python", "OpenCV", "NumPy", "A* Pathfinding", "GDSII", "Jupyter"],
+    problem:
+      "Semiconductor packaging requires precise die alignment and wire routing across multiple layers. Manual inspection and routing is slow and error-prone at scale, particularly for detecting die center shift and routing wires around defects.",
+    solution:
+      "Developed CHIPS-CV_v8-4, a rotation-aware template matching pipeline for corner alignment markers that improved die center shift detection accuracy by over 90%. Also built a 3D A* router for multi-layer wire routing between die components, and a microLED contact detection and routing pipeline that handles missing or obstructed contacts.",
+    outcome:
+      "CHIPS-CV_v8-4 achieved over 90% improvement in die center shift detection. The A* router successfully handles multi-layer routing with via management and obstacle avoidance. The microLED pipeline automates detection, pairing, and GDSII layout generation for full wafer images.",
+    githubUrl: "https://github.com/TravisHaa/CHIPS_research",
+  },
 };
 
 interface ProjectDetailProps {
@@ -130,7 +187,7 @@ export function ProjectDetail({ projectId, onBack }: ProjectDetailProps) {
           className="flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors mb-8"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Projects
+          Back to Work
         </button>
 
         {/* Hero Image */}

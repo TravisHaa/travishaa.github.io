@@ -2,6 +2,7 @@ import { MeshGradient } from "./MeshGradient";
 import { FocusInView } from "./FocusInView";
 import { ExperienceSection } from "./ExperienceSection";
 import { CourseworkSection } from "./CourseworkSection";
+import { GooeyText } from "./ui/gooey-text-morphing";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { motion, useTransform, useScroll } from "motion/react";
@@ -34,39 +35,22 @@ export function HomePage({ onNavigate }: HomePageProps) {
     let touchStartY = 0;
     let isTouching = false;
 
-    // Function to snap scroll to target position
-    const snapToTarget = () => {
-      if (isScrollingRef.current) return; // Prevent multiple snaps
-      
+    const snapTo = (position: number) => {
+      if (isScrollingRef.current) return;
       isScrollingRef.current = true;
-      window.scrollTo({
-        top: TARGET_SCROLL,
-        behavior: "smooth",
-      });
-
-      // Reset scrolling flag after animation completes
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current);
-      }
-      
+      window.scrollTo({ top: position, behavior: "smooth" });
+      if (scrollTimeoutRef.current) clearTimeout(scrollTimeoutRef.current);
       scrollTimeoutRef.current = setTimeout(() => {
         isScrollingRef.current = false;
       }, 1000);
     };
 
-    // Handle wheel events (mouse wheel, trackpad)
+    // Handle wheel events — snap down to TARGET_SCROLL or up to 0
     const handleWheel = (e: WheelEvent) => {
       const currentScroll = window.scrollY;
-      
-      // If we're in the transition zone and scrolling down
-      if (
-        currentScroll >= TRANSITION_START && 
-        currentScroll < TARGET_SCROLL && 
-        e.deltaY > 0 && 
-        !isScrollingRef.current
-      ) {
+      if (currentScroll >= TRANSITION_START && currentScroll < TARGET_SCROLL && !isScrollingRef.current) {
         e.preventDefault();
-        snapToTarget();
+        snapTo(e.deltaY > 0 ? TARGET_SCROLL : 0);
       }
     };
 
@@ -78,21 +62,12 @@ export function HomePage({ onNavigate }: HomePageProps) {
 
     const handleTouchMove = (e: TouchEvent) => {
       if (!isTouching) return;
-      
       const currentScroll = window.scrollY;
-      const touchCurrentY = e.touches[0].clientY;
-      const touchDelta = touchStartY - touchCurrentY; // Positive when scrolling down
-      
-      // If we're in the transition zone and scrolling down with significant movement
-      if (
-        currentScroll >= TRANSITION_START && 
-        currentScroll < TARGET_SCROLL && 
-        touchDelta > 10 && // Require minimum movement to trigger
-        !isScrollingRef.current
-      ) {
+      const touchDelta = touchStartY - e.touches[0].clientY;
+      if (currentScroll >= TRANSITION_START && currentScroll < TARGET_SCROLL && Math.abs(touchDelta) > 10 && !isScrollingRef.current) {
         e.preventDefault();
         isTouching = false;
-        snapToTarget();
+        snapTo(touchDelta > 0 ? TARGET_SCROLL : 0);
       }
     };
 
@@ -144,9 +119,14 @@ export function HomePage({ onNavigate }: HomePageProps) {
           </FocusInView>
 
           <FocusInView delay={0.16}>
-            <p className="text-lg text-black/60 max-w-xl mx-auto mb-12">
-              C++ Optimization | AI Wearables | Deep Learning
-            </p>
+            <div className="font-bold h-10 mb-12 opacity-60">
+              <GooeyText
+                texts={["C++ Optimization", "AI Wearables", "Deep Learning"]}
+                morphTime={1}//morph duration
+                cooldownTime={2}//hold time btwn transititions
+                textClassName="text-lg text-black"
+              />
+            </div>
           </FocusInView>
         </div>
 
@@ -156,8 +136,8 @@ export function HomePage({ onNavigate }: HomePageProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
-            duration: 0.8,
-            delay: 0.5,
+            duration: 0.01, 
+            delay: 0.01, 
             ease: [0.16, 1, 0.3, 1],
           }}
         >
@@ -177,7 +157,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           }}
         >
           <div>LAST UPDATED</div>
-          <div>1.15.25</div>
+          <div>4.1.26</div>
         </motion.div>
 
         {/* Location (bottom right) - pops in after name */}
