@@ -27,8 +27,8 @@ const projects: Project[] = [
   },
   {
     id: "6",
-    title: "Cereal Hand Gestures",
-    subtitle: "CS188 AI project — real-time hand gesture recognition web app",
+    title: "An ASL + Pi 0.5 controlled Cereal Robot",
+    subtitle: "Exactly what the title says :)",
     date: "2026",
     imageUrl: "/logos/cereal-gestures.png",
     url: 'https://cs188-cereal-hand-gestures.vercel.app/',
