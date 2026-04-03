@@ -38,7 +38,7 @@ const projects: Project[] = [
     title: "CHIPS Lab Research",
     subtitle: "Computer vision pipeline for semiconductor die alignment & routing",
     date: "2024 - 2025",
-    imageUrl: "/logos/chips-research.png",
+    imageUrl: "/logos/chips.png",
     githubUrl: "https://github.com/TravisHaa/CHIPS_research",
   },
   {
