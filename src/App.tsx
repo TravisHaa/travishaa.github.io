@@ -14,6 +14,7 @@ export default function App() {
   const handleNavigate = (page: 'home' | 'projects') => {
     setCurrentPage(page);
     setSelectedProjectId(null);
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleProjectClick = (projectId: string) => {
