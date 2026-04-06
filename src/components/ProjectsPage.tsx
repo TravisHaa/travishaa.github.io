@@ -15,16 +15,16 @@ interface Project {
 }
 
 const projects: Project[] = [
-  {
-    id: "9",
-    title: "CUDA Kernel Practice",
-    subtitle:
-      "A hands-on collection of custom CUDA kernels I've written to explore GPU programming",
-    award: "Work in Progress",
-    date: "2026",
-    imageUrl: "/logos/cuda.png",
-    githubUrl: "https://github.com/TravisHaa/CUDA_practice",
-  },
+  // {
+  //   id: "9",
+  //   title: "CUDA Kernel Practice",
+  //   subtitle:
+  //     "A hands-on collection of custom CUDA kernels I've written to explore GPU programming",
+  //   award: "Work in Progress",
+  //   date: "2026",
+  //   imageUrl: "/logos/cuda.png",
+  //   githubUrl: "https://github.com/TravisHaa/CUDA_practice",
+  // },
   {
     id: "6",
     title: "An ASL + Pi 0.5 controlled Cereal Robot",
