@@ -52,7 +52,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
     ],
     Social: [
       { label: "GitHub", href: "https://github.com/TravisHaa", icon: Github },
-      { label: "LinkedIn", href: "https://linkedin.com/in/travis-ha", icon: Linkedin },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/travis-ha-/", icon: Linkedin },
       { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=travisha110@g.ucla.edu", icon: Mail },
     ],
   };
