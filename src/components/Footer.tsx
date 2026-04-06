@@ -52,7 +52,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
     ],
     Social: [
       { label: "GitHub", href: "https://github.com/TravisHaa", icon: Github },
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/travis-ha-/", icon: Linkedin },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/travis-ha-/", icon: Linkedin, onClick: () => window.open("https://www.linkedin.com/in/travis-ha-/", "_blank") },
       { label: "Email", href: "https://mail.google.com/mail/?view=cm&fs=1&to=travisha110@g.ucla.edu", icon: Mail },
     ],
   };
@@ -133,6 +133,7 @@ export function Footer({ currentPage, onNavigate }: FooterProps) {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={link.onClick ? (e) => { e.preventDefault(); link.onClick!(); } : undefined}
                       className="flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors duration-300 group"
                     >
                       <Icon className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" />
